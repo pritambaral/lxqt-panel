@@ -36,24 +36,24 @@
 
 
 namespace Ui {
-    class LxQtKbIndicatorConfiguration;
+    class LXQtKbIndicatorConfiguration;
 }
 
-class LxQtKbIndicatorConfiguration : public QDialog
+class LXQtKbIndicatorConfiguration : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit LxQtKbIndicatorConfiguration(QSettings *settings, QWidget *parent = 0);
-    ~LxQtKbIndicatorConfiguration();
+    explicit LXQtKbIndicatorConfiguration(QSettings *settings, QWidget *parent = 0);
+    ~LXQtKbIndicatorConfiguration();
 
 public slots:
     void saveSettings();
 
 private:
-    Ui::LxQtKbIndicatorConfiguration *ui;
+    Ui::LXQtKbIndicatorConfiguration *ui;
     QSettings *mSettings;
-    LxQt::SettingsCache oldSettings;
+    LXQt::SettingsCache oldSettings;
 
     /*
       Read settings from conf file and put data into controls.

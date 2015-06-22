@@ -31,9 +31,9 @@
 #include <QLayout>
 #include <QTimer>
 
-LxQtKbIndicator::LxQtKbIndicator(const ILxQtPanelPluginStartupInfo &startupInfo):
+LXQtKbIndicator::LXQtKbIndicator(const ILXQtPanelPluginStartupInfo &startupInfo):
     QObject(),
-    ILxQtPanelPlugin(startupInfo),
+    ILXQtPanelPlugin(startupInfo),
     mContent(new QWidget())
 {
     modifierInfo = new KModifierKeyInfo(this);
@@ -63,23 +63,23 @@ LxQtKbIndicator::LxQtKbIndicator(const ILxQtPanelPluginStartupInfo &startupInfo)
     QTimer::singleShot(0, this, SLOT(delayedInit()));
 }
 
-LxQtKbIndicator::~LxQtKbIndicator()
+LXQtKbIndicator::~LXQtKbIndicator()
 {
     delete mContent;
 }
 
-void LxQtKbIndicator::delayedInit()
+void LXQtKbIndicator::delayedInit()
 {
     settingsChanged();
     realign();
 }
 
-QWidget *LxQtKbIndicator::widget()
+QWidget *LXQtKbIndicator::widget()
 {
     return mContent;
 }
 
-void LxQtKbIndicator::settingsChanged()
+void LXQtKbIndicator::settingsChanged()
 {
     mShowCapsLock = settings()->value("show_caps_lock", true).toBool();
     mShowNumLock = settings()->value("show_num_lock", true).toBool();
@@ -94,12 +94,12 @@ void LxQtKbIndicator::settingsChanged()
     mScrollLock->setEnabled(modifierInfo->isKeyLocked(Qt::Key_ScrollLock));
 }
 
-QDialog *LxQtKbIndicator::configureDialog()
+QDialog *LXQtKbIndicator::configureDialog()
 {
-    return new LxQtKbIndicatorConfiguration(settings());
+    return new LXQtKbIndicatorConfiguration(settings());
 }
 
-void LxQtKbIndicator::realign()
+void LXQtKbIndicator::realign()
 {
     if (panel()->isHorizontal())
         mContent->setMinimumSize(0, panel()->iconSize());
@@ -107,7 +107,7 @@ void LxQtKbIndicator::realign()
         mContent->setMinimumSize(panel()->iconSize(), 0);
 }
 
-void LxQtKbIndicator::modifierStateChanged(Qt::Key key, bool active)
+void LXQtKbIndicator::modifierStateChanged(Qt::Key key, bool active)
 {
     switch (key)
     {
@@ -128,7 +128,7 @@ void LxQtKbIndicator::modifierStateChanged(Qt::Key key, bool active)
     }
 }
 
-bool LxQtKbIndicator::eventFilter(QObject *object, QEvent *event)
+bool LXQtKbIndicator::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::QEvent::MouseButtonRelease)
     {

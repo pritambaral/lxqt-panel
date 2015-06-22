@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>LxQtKbIndicatorConfiguration</class>
- <widget class="QDialog" name="LxQtKbIndicatorConfiguration">
+ <class>LXQtKbIndicatorConfiguration</class>
+ <widget class="QDialog" name="LXQtKbIndicatorConfiguration">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -68,7 +68,7 @@
   <connection>
    <sender>buttons</sender>
    <signal>accepted()</signal>
-   <receiver>LxQtKbIndicatorConfiguration</receiver>
+   <receiver>LXQtKbIndicatorConfiguration</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -84,7 +84,7 @@
   <connection>
    <sender>buttons</sender>
    <signal>rejected()</signal>
-   <receiver>LxQtKbIndicatorConfiguration</receiver>
+   <receiver>LXQtKbIndicatorConfiguration</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

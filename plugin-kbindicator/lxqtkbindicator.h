@@ -34,16 +34,16 @@
 
 class QLabel;
 
-class LxQtKbIndicator : public QObject, public ILxQtPanelPlugin
+class LXQtKbIndicator : public QObject, public ILXQtPanelPlugin
 {
     Q_OBJECT
 public:
-    LxQtKbIndicator(const ILxQtPanelPluginStartupInfo &startupInfo);
-    ~LxQtKbIndicator();
+    LXQtKbIndicator(const ILXQtPanelPluginStartupInfo &startupInfo);
+    ~LXQtKbIndicator();
 
     virtual QWidget *widget();
     virtual QString themeId() const { return "KbIndicator"; }
-    virtual ILxQtPanelPlugin::Flags flags() const { return PreferRightAlignment | HaveConfigDialog; }
+    virtual ILXQtPanelPlugin::Flags flags() const { return PreferRightAlignment | HaveConfigDialog; }
     virtual bool isSeparate() const { return false; }
 
     QDialog *configureDialog();
@@ -68,15 +68,15 @@ private:
     QLabel *mScrollLock;
 };
 
-class LxQtKbIndicatorLibrary: public QObject, public ILxQtPanelPluginLibrary
+class LXQtKbIndicatorLibrary: public QObject, public ILXQtPanelPluginLibrary
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "lxde-qt.org/Panel/PluginInterface/3.0")
-    Q_INTERFACES(ILxQtPanelPluginLibrary)
+    Q_INTERFACES(ILXQtPanelPluginLibrary)
 public:
-    ILxQtPanelPlugin *instance(const ILxQtPanelPluginStartupInfo &startupInfo) const
+    ILXQtPanelPlugin *instance(const ILXQtPanelPluginStartupInfo &startupInfo) const
     {
-        return new LxQtKbIndicator(startupInfo);
+        return new LXQtKbIndicator(startupInfo);
     }
 };
 

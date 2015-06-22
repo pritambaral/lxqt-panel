@@ -51,7 +51,7 @@ void termSignalHandler(int)
 
 int main(int argc, char *argv[])
 {
-    LxQtPanelApplication app(argc, argv);
+    LXQtPanelApplication app(argc, argv);
 
     // Quit gracefully
     ::signal(SIGTERM, termSignalHandler);

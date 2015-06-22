@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Service
-ServiceTypes=LxQtPanel/Plugin
+ServiceTypes=LXQtPanel/Plugin
 Name=Keyboard indicator
 Comment=Keyboard indicator plugin.
 Icon=input-keyboard

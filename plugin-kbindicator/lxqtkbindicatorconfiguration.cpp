@@ -30,9 +30,9 @@
 #include "ui_lxqtkbindicatorconfiguration.h"
 
 
-LxQtKbIndicatorConfiguration::LxQtKbIndicatorConfiguration(QSettings *settings, QWidget *parent) :
+LXQtKbIndicatorConfiguration::LXQtKbIndicatorConfiguration(QSettings *settings, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::LxQtKbIndicatorConfiguration),
+    ui(new Ui::LXQtKbIndicatorConfiguration),
     mSettings(settings),
     oldSettings(settings)
 {
@@ -49,26 +49,26 @@ LxQtKbIndicatorConfiguration::LxQtKbIndicatorConfiguration(QSettings *settings, 
     loadSettings();
 }
 
-LxQtKbIndicatorConfiguration::~LxQtKbIndicatorConfiguration()
+LXQtKbIndicatorConfiguration::~LXQtKbIndicatorConfiguration()
 {
     delete ui;
 }
 
-void LxQtKbIndicatorConfiguration::loadSettings()
+void LXQtKbIndicatorConfiguration::loadSettings()
 {
     ui->capsLockCB->setChecked(mSettings->value("show_caps_lock", true).toBool());
     ui->numLockCB->setChecked(mSettings->value("show_num_lock", true).toBool());
     ui->scrollLockCB->setChecked(mSettings->value("show_scroll_lock", true).toBool());
 }
 
-void LxQtKbIndicatorConfiguration::saveSettings()
+void LXQtKbIndicatorConfiguration::saveSettings()
 {
     mSettings->setValue("show_caps_lock", ui->capsLockCB->isChecked());
     mSettings->setValue("show_num_lock", ui->numLockCB->isChecked());
     mSettings->setValue("show_scroll_lock", ui->scrollLockCB->isChecked());
 }
 
-void LxQtKbIndicatorConfiguration::dialogButtonsAction(QAbstractButton *btn)
+void LXQtKbIndicatorConfiguration::dialogButtonsAction(QAbstractButton *btn)
 {
     if (ui->buttons->buttonRole(btn) == QDialogButtonBox::ResetRole)
     {
